@@ -1,0 +1,21 @@
+{
+  "name": "anvil-claim-proofs",
+  "version": "1.0.0",
+  "type": "module",
+  "author": "AmperaFoundation",
+  "license": "ISC",
+  "description": "Generates Anvil distribution merkle tree and proofs",
+  "main": "src/generate.js",
+  "scripts": {
+    "generate": "npm run clean && node src/generate.js",
+    "verify": "node src/verify.js",
+    "clean": "rimraf dist"
+  },
+  "dependencies": {
+    "@openzeppelin/merkle-tree": "^1.0.6",
+    "csv-parse": "^5.5.3"
+  },
+  "devDependencies": {
+    "rimraf": "^5.0.5"
+  }
+}
