@@ -57,7 +57,9 @@ async function run() {
     const environments = environmentsPaths.map(x => x.split(".")[0])
     for(const environment of environments ) {
       const leafValues = parse(await fs.readFile(`values/${environment}.csv`))
-
+      for (let i = 0; i < leafValues.length; i++) {
+        leafValues[i][0] = leafValues[i][0].toLowerCase()
+      }
       debugLog('Leaf Values:', leafValues)
 
       const tree = StandardMerkleTree.of(leafValues, ['address', 'uint256'])
